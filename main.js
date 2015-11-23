@@ -1,3 +1,4 @@
+var turnCount = 0;
 var boxes = document.querySelectorAll(".box");
 
 for(var i =0; i < boxes.length; i++){
@@ -5,6 +6,13 @@ for(var i =0; i < boxes.length; i++){
 }
 
 function takeTurn(){
-	console.log(this);
-	this.innerHTML = "O"
+	if(!this.innerHTML){
+			if(turnCount % 2 === 0){
+				this.innerHTML = "X";
+			} else {
+				this.innerHTML = "O";
+			}
+			turnCount++;
+			
+		}
 }
